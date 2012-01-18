@@ -326,9 +326,13 @@ abstract class ServiceRequestBase {
 		request.getParam().executeRequest();
 		if(request.getParam().getResponseCode() >= 400)
 		{
-			throw new Exception("The remote server returned an error: ("+request.getParam().getResponseCode()+")"+request.getParam().getResponseText());
-		}
-		return request.getParam();
+			throw new HttpErrorException("The remote server returned an error: ("+request.getParam().getResponseCode()+")"+request.getParam().getResponseText(), request.getParam().getResponseCode());
+			//throw new Exception("The remote server returned an error: ("+request.getParam().getResponseCode()+")"+request.getParam().getResponseText());
+
+ 		}
+ 		return request.getParam();
+ 	
+
 	}
 
 	/**
@@ -714,6 +718,15 @@ abstract class ServiceRequestBase {
 			// Wrap exception.
 			throw new ServiceRequestException(String.format(Strings.
 					ServiceRequestFailed, e.getMessage()), e);
+		}
+		catch(HttpErrorException e){
+			if (null != request.getParam() && -1 != request.getParam().getResponseCode()) {
+				// this.service.traceHttpResponseHeaders(
+				// TraceFlags.EwsResponseHttpHeaders, req);
+				// response code -1 indicate exception is not HTTP exception
+				this.processWebException(e, request.getParam());
+			}
+			throw  new HttpErrorException(e.getMessage(),e.getHttpErrorCode());
 		}
 		catch (Exception e)
 		{

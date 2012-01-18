@@ -85,7 +85,7 @@ public class MeetingMessage extends EmailMessage {
 	 */
 	@Override
 	protected ServiceObjectSchema getSchema() {
-		return MeetingMessageSchema.getInstance();
+		return MeetingMessageSchema.Instance;
 	}
 
 	/**

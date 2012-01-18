@@ -270,6 +270,7 @@ GroupMemberPropertyDefinition.java
 HangingServiceRequestBase.java
 HangingTraceStream.java
 HttpClientWebRequest.java
+HttpErrorException.java
 HttpProxyCredentials.java
 HttpWebRequest.java
 IAction.java

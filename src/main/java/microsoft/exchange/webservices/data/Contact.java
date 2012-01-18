@@ -433,8 +433,8 @@ public class Contact extends Item {
 	 * @throws ServiceLocalException
 	 *             the service local exception
 	 */
-	public String getCompleteName() throws ServiceLocalException {
-		return (String) this.getPropertyBag().getObjectFromPropertyDefinition(
+	public CompleteName getCompleteName() throws ServiceLocalException {
+		return (CompleteName) this.getPropertyBag().getObjectFromPropertyDefinition(
 				ContactSchema.CompleteName);
 	}
 

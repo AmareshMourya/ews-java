@@ -173,6 +173,12 @@ IAutodiscoverRedirectionUrl, IFunctionDelegate {
 		} else {
 			PrintWriter writer = new PrintWriter(urlOutStream);
 			this.writeLegacyAutodiscoverRequest(emailAddress, settings, writer);
+			
+			/*  Flush Start */
+			writer.flush();
+			urlOutStream.flush();
+			urlOutStream.close();
+			/* Flush End */
 		}
 		request.executeRequest();
 		request.getResponseCode();
