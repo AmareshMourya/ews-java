@@ -236,26 +236,26 @@ public class Appointment extends Item implements ICalendarActionProvider {
         //or by setting it directly. 
         // Otherwise, to dirty
         //  the StartTimeZone property, we just set it to its current value.
-        if ((this.getService().getRequestedServerVersion() == ExchangeVersion.Exchange2007_SP1) &&
-            !(this.getService().getExchange2007CompatibilityMode())) {
-            if (this.getPropertyBag().isPropertyUpdated(AppointmentSchema.Start) ||
-                this.getPropertyBag().isPropertyUpdated(AppointmentSchema.End) ||
-                this.getPropertyBag().isPropertyUpdated(AppointmentSchema.IsAllDayEvent) ||
-                this.getPropertyBag().isPropertyUpdated(AppointmentSchema.Recurrence))
-            {
-                //  If the property isn't in the property bag, throw....
-                if (!this.getPropertyBag().contains(AppointmentSchema.StartTimeZone))
-                {
-                    throw new ServiceLocalException(Strings.
-                    		StartTimeZoneRequired);
-                    		//getStartTimeZoneRequired());
-                }
-
-                //  Otherwise, set the time zone to its current value to 
-                // force it to be sent with the request.
-               this.setStartTimeZone(this.getStartTimeZone());
-            }
-        }
+//        if ((this.getService().getRequestedServerVersion() == ExchangeVersion.Exchange2007_SP1) &&
+//            !(this.getService().getExchange2007CompatibilityMode())) {
+//            if (this.getPropertyBag().isPropertyUpdated(AppointmentSchema.Start) ||
+//                this.getPropertyBag().isPropertyUpdated(AppointmentSchema.End) ||
+//                this.getPropertyBag().isPropertyUpdated(AppointmentSchema.IsAllDayEvent) ||
+//                this.getPropertyBag().isPropertyUpdated(AppointmentSchema.Recurrence))
+//            {
+//                //  If the property isn't in the property bag, throw....
+//                if (!this.getPropertyBag().contains(AppointmentSchema.StartTimeZone))
+//                {
+//                    throw new ServiceLocalException(Strings.
+//                    		StartTimeZoneRequired);
+//                    		//getStartTimeZoneRequired());
+//                }
+//
+//                //  Otherwise, set the time zone to its current value to
+//                // force it to be sent with the request.
+//               this.setStartTimeZone(this.getStartTimeZone());
+//            }
+//        }
     }
 
 	/**
