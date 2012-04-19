@@ -3,6 +3,12 @@ Just a few notes.
 It needs JDK 1.6. The original documentation says that it works with Exchange 2010
 but it seems to work against Exchange 2007 Service Pack 1.
 
+Modified Appointment.java, method validate(): lines 239-258 commented out
+This removes the requirement that a TimeZoneDefinition be added for Appointment's
+save & update calls to Exchange 2007 SP1 (only). Exchange 2007 SP1 was choking
+on the TimeZoneDefinition elements in the request. With these changes, save(...)
+should work as documented.
+
 From the website:
 
 Hello EWS Java experts. We have posted an updated EWS Java API package. 
