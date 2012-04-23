@@ -563,6 +563,7 @@ public abstract class ExchangeServiceBase {
 		DateFormat utcFormatter = null;
 		String utcPattern = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 		utcFormatter = new SimpleDateFormat(utcPattern);
+        utcFormatter.setTimeZone(TimeZone.getTimeZone("UTC"));
 		return utcFormatter.format(dt);
 	}
 

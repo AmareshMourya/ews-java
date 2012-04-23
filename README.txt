@@ -9,6 +9,10 @@ save & update calls to Exchange 2007 SP1 (only). Exchange 2007 SP1 was choking
 on the TimeZoneDefinition elements in the request. With these changes, save(...)
 should work as documented.
 
+Modified ExchangeServiceBase.java method convertDateTimeToUniversalDateTimeString():
+line 566 added to force formatter to be using UTC by default. (Earlier setting of
+formatter class default to PST in application seems to have caused problems)
+
 From the website:
 
 Hello EWS Java experts. We have posted an updated EWS Java API package. 
