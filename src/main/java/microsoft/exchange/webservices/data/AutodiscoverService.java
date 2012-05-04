@@ -1808,7 +1808,7 @@ IAutodiscoverRedirectionUrl, IFunctionDelegate {
 	 * @param service
 	 *            The service.
 	 */
-	protected AutodiscoverService(ExchangeServiceBase service) {
+	public AutodiscoverService(ExchangeServiceBase service) {
 		super(service, service.getRequestedServerVersion());
 	}
 

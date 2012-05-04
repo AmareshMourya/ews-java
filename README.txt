@@ -13,6 +13,8 @@ Modified ExchangeServiceBase.java method convertDateTimeToUniversalDateTimeStrin
 line 566 added to force formatter to be using UTC by default. (Earlier setting of
 formatter class default to PST in application seems to have caused problems)
 
+Altered visibility of constructor AutodiscoverService(ExchangeServiceBase) to public.
+
 From the website:
 
 Hello EWS Java experts. We have posted an updated EWS Java API package. 
