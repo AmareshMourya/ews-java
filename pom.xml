@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.microsoft.ewsjavaapi</groupId>
     <artifactId>exchange-ws-api</artifactId>
-    <version>1.1.5-SNAPSHOT</version>
+    <version>1.1.5.1-SNAPSHOT</version>
     <name>Exchange WebService API</name>
     <description>The source came from http://archive.msdn.microsoft.com/ewsjavaapi
     Support for Maven has been added.</description>
