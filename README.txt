@@ -15,6 +15,9 @@ formatter class default to PST in application seems to have caused problems)
 
 Altered visibility of constructor AutodiscoverService(ExchangeServiceBase) to public.
 
+Modified ExchangeServiceBase.convertUniversalDateTimeStringToDate to properly convert date strings into
+UTC time.
+
 From the website:
 
 Hello EWS Java experts. We have posted an updated EWS Java API package. 
