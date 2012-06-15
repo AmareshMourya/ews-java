@@ -1,5 +1,8 @@
 Just a few notes.
 
+** Version 1.1.5.2
+* Updated to jcifs 1.3.17
+
 It needs JDK 1.6. The original documentation says that it works with Exchange 2010
 but it seems to work against Exchange 2007 Service Pack 1.
 
